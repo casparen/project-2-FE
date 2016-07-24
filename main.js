@@ -2,6 +2,8 @@
 // collection = search
 // favCollection = favorites
 
+//https://mysterious-peak-84379.herokuapp.com
+
 window.onload = function (){
   var welcomeButton = document.querySelector('#welcome')
   var welcomeDiv = document.querySelector('.welcomeDiv')
@@ -19,6 +21,7 @@ window.onload = function (){
 
 
   var url = 'http://localhost:3000';
+  // var url = 'https://mysterious-peak-84379.herokuapp.com'
   var LNG = ''
   var LAT = ''
   var map;
@@ -280,7 +283,7 @@ window.onload = function (){
 
       console.log(name);
       $.ajax({
-        url: 'http://localhost:3000/favorites/new',
+        url: url + '/favorites/new',
         method: 'POST',
         data: data,
         dataType: 'json'
