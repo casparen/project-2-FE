@@ -1,0 +1,122 @@
+/*body {
+  display: flex;
+  align-content: center;
+  margin: auto;
+  flex-direction: column;
+     height: 90%;
+     width: 90%;
+border: solid green 1px;
+   }*/
+
+
+   #map {
+position: absolute;
+     height: 100%;
+     width: 100%;
+    opacity: 0.6;
+    margin: auto;
+
+
+
+
+   }
+
+   .gmnoprint {
+     visibility: hidden;
+   }
+
+
+   .welcomeDiv {
+          margin-top: 18%;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+   }
+
+      #welcome{
+        align-items: center;
+        margin: auto;
+        opacity: 0.6;
+        background-color: black;
+        font-size: 45px;
+
+      }
+
+   .wrapper{
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+     /*border: solid red 1px;*/
+   }
+
+   .search{
+     margin: auto;
+     position: relative;
+     /*border: solid black 1px;*/
+    z-index: 1;
+    text-align: center;
+    padding: 0.6cm;
+    /*opacity: 0.8;*/
+
+   }
+
+.options {
+ align-items: center;
+ width: 3cm;
+
+}
+
+   .wifiSearchDiv{
+    /*border: solid black 1px;*/
+    z-index: 1;
+  margin-top: -7.5cm;
+   }
+
+   #wifiSearch{
+     position: absolute;
+     background-color: white;
+     padding-top: 8cm;
+     padding-bottom: 8cm;
+     border-radius: 10px;
+     opacity: 0.7;
+     margin-left: 0.5cm;
+     border-color: transparent;
+
+   }
+
+   .viewFavorites {
+     /*border: solid black 1px;*/
+     text-align: right;
+     /*margin-right: 0.5cm;*/
+     margin-left: 36cm;
+     z-index: 1;
+     opacity: 0.6;
+     position: absolute;
+   }
+
+#favoritesButton {
+     font-size: 12px;
+     margin-top: 14cm;
+
+   }
+
+
+
+.favPlacesDiv {
+
+  margin-left: 29cm;
+  z-index: 1;
+  position: absolute;
+
+}
+
+.placeContainer{
+  padding: 8px;
+  border-radius: 10px;
+  background: white;
+  opacity: 0.7;
+  margin-top: 0.4cm;
+
+  width: 8cm;
+}
