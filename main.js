@@ -20,8 +20,8 @@ window.onload = function (){
 
 
 
-  var url = 'http://localhost:3000';
-  // var url = 'https://mysterious-peak-84379.herokuapp.com'
+  // var url = 'http://localhost:3000';
+  var url = 'https://mysterious-peak-84379.herokuapp.com'
   var LNG = ''
   var LAT = ''
   var map;
