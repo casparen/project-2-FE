@@ -164,9 +164,9 @@ window.onload = function (){
     var data = {}
     var path = ""
     var searchOptions = document.querySelector('.options').value
-    if(searchOptions === 'Coffee'){
-      path = 'Coffee'
-      console.log('Coffee');
+    if(searchOptions === 'coffee'){
+      path = 'coffee'
+      console.log('coffee');
     }
     if(searchOptions === 'smoothie'){
       console.log('smoothie');
