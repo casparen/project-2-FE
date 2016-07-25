@@ -135,11 +135,13 @@ window.onload = function (){
               strokeOpacity: 0,
               strokeWeight: 2,
               fillColor: '#FF0000',
-              fillOpacity: 0.1,
+              fillOpacity: 0.2,
               map: map,
               center: wifiLatLng,
-              radius: 280
+              radius: 100
             });
+
+            
             // var marker = new google.maps.Marker({
             //   map: map,
             //   position: wifiLatLng,
