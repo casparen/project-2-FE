@@ -1,4 +1,4 @@
-/*body {
+ /*body {
   display: flex;
   align-content: center;
   margin: auto;
@@ -13,7 +13,7 @@ border: solid green 1px;
 position: absolute;
      height: 100%;
      width: 100%;
-    opacity: 0.6;
+    opacity: 0.7;
     margin: auto;
 
 
@@ -97,7 +97,7 @@ position: absolute;
 
 #favoritesButton {
      font-size: 12px;
-     margin-top: 14cm;
+     margin-top: 15cm;
 
    }
 

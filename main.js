@@ -141,7 +141,7 @@ window.onload = function (){
               radius: 100
             });
 
-            
+
             // var marker = new google.maps.Marker({
             //   map: map,
             //   position: wifiLatLng,
@@ -283,6 +283,7 @@ window.onload = function (){
 
     var button = document.createElement('BUTTON');
     button.id = "submitForm"
+    button.ClassName = 'thumb_up'
     button.innerHTML = 'SUBMIT'
     formDiv.appendChild(button);
 
