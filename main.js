@@ -19,9 +19,9 @@ window.onload = function (){
   var favoritesButton = document.querySelector('#favoritesButton')
 
 
-///tetetet
-  // var url = 'http://localhost:3000';
-  var url = 'https://mysterious-peak-84379.herokuapp.com'
+  ///tetetet
+  var url = 'http://localhost:3000';
+  // var url = 'https://mysterious-peak-84379.herokuapp.com'
   var LNG = ''
   var LAT = ''
   var map;
@@ -185,13 +185,22 @@ window.onload = function (){
     }).done(function(response){
       var results = response.results
       console.log(results);
+
+
+
       for(var i = 0; i < results.length; i++){
+              var infowindow = ""
+          // var map = document.querySelector('#map')
         var placeLat = results[i].geometry.location.lat
         var placeLng = results[i].geometry.location.lng
         var PLACE_LAT_LNG  = {lat: placeLat, lng: placeLng}
+        var markerContainer = document.querySelector('.markerContainer')
 
-        var infowindow = ""
-        createMarker(results[i])
+        var markerContent = document.createElement('div')
+        markerContent.innerHTML = createMarker(results[i])
+        markerContent.style.display = 'none';
+        markerContainer.appendChild(markerContent)
+
 
 
         function createMarker(result){
@@ -224,7 +233,18 @@ window.onload = function (){
 
 
   function form(result) {
+    console.log(result);
     var infoWindowDiv = document.querySelector('.gm-style-iw')
+
+    var adress = document.createElement('h6');
+    adress.className = 'windowContent';
+    adress.innerText = 'Adress: ' + result.vicinity;
+    infoWindowDiv.appendChild(adress)
+
+    var publicRating = document.createElement('h6');
+    publicRating.className = 'windowContent'
+    publicRating.innerText = 'Rating: ' + result.rating
+    infoWindowDiv.appendChild(publicRating)
 
     var formDiv = document.createElement('div');
     formDiv.class = 'formDiv'
@@ -301,6 +321,8 @@ window.onload = function (){
 
   ///////////////////////////////////////////////////////////////////////view favorites
   favoritesButton.addEventListener('click', function (){
+    // var markers = document.querySelector('.markerContainer')
+    // markers.innerHTML = ""
     console.log('click');
     var favPlacesDiv = document.querySelector('.favPlacesDiv')
     favPlacesDiv.innerHTML = ""
@@ -310,9 +332,11 @@ window.onload = function (){
       dataType: 'json'
     }).done(function(response){
       var result = response
-      console.log(result);
+      // console.log(result);
+      // var indexButtonDelete = []
+      // var indexI = []
 
-      for(var i = 0; i < response.length; i ++){
+      for(var i = 0; i < result.length; i ++){
         var name = result[i].placeName
         var adress = result[i].placeAdress
         var rating = result[i].placeRating
@@ -371,43 +395,43 @@ window.onload = function (){
         var deleteButton = document.createElement('BUTTON')
         deleteButton.className = 'deleteButton'
         deleteButton.id = i
+        // deleteButton.innerText = result[i]._id
         deleteButton.innerText = 'Delete'
         placeContainer.appendChild(deleteButton)
 
 
-        // var id = document.createElement('p');
-        // id.className = 'hidden';
-        // id.innerHTML = placeId
-        // // id.style.display = 'none'
-        // id.style.visibility = 'hidden';
-        // placeContainer.appendChild(id)
-        deleteButton.addEventListener('click', function (){
-          console.log('clikc');
-          var header = document.querySelector('.header')
 
-            for(var x = 0; x < response.length; x ++){
-                var name = response[x].name
+        // indexButtonDelete.push(deleteButton.id)
+        // indexI.push(i)
 
-              if(header.innerText === name){
-                  console.log(name);
-              }
-            }
+        // console.log(deleteButton.id);
+        // console.log(i);
+        // console.log(indexButtonDelete[i]);
+        deleteButton.addEventListener('click', function (ev){
+          // console.log(ev);
+          var buttonNum = ev.srcElement
+          // console.log(buttonNum);
+          var buttonNumId = buttonNum.id
+          var deletePlace = result[buttonNumId]
+          var deleteName = deletePlace.placeName
+              console.log(deleteName);
+          var data = {
+              name: deleteName
+          }
 
-          // console.log(result);
-
+          $.ajax({
+              url: url + '/favorites/' + deleteName,
+              dataType: 'json',
+              data: data,
+              method: 'delete'
+          }).done(function(response){
+            console.log(response);
+              console.log(deleteName + " has been deleted.");
+          })//end ajax call
         })//delete click
       }//for loop
-
-
     })//ajax done
-
-
   })//click view favs
-
-
-
-
-
 
 
 
