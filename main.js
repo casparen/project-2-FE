@@ -20,8 +20,8 @@ window.onload = function (){
 
 
   ///tetetet
-  var url = 'http://localhost:3000';
-  // var url = 'https://mysterious-peak-84379.herokuapp.com'
+  // var url = 'http://localhost:3000';
+  var url = 'https://mysterious-peak-84379.herokuapp.com'
   var LNG = ''
   var LAT = ''
   var map;
@@ -164,9 +164,9 @@ window.onload = function (){
     var data = {}
     var path = ""
     var searchOptions = document.querySelector('.options').value
-    if(searchOptions === 'Coffeee'){
-      path = 'Coffeee'
-      console.log('Coffeee');
+    if(searchOptions === 'Coffee'){
+      path = 'Coffee'
+      console.log('Coffee');
     }
     if(searchOptions === 'smoothie'){
       console.log('smoothie');
